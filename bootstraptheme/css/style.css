@@ -1,0 +1,251 @@
+/* FONTS */
+
+@font-face {
+  font-family: "Norwester";
+  src: url("webfonts/norwester.eot");
+  src: url("webfonts/norwester.woff") format("woff"),
+  url("webfonts/norwester.ttf") format("truetype"),
+  url("webfonts/norwester.svg#svgNorwester") format("svg");
+  }
+
+@font-face {
+  font-family: 'Kollektif Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('webfonts/Kollektif.woff') format('woff');
+}
+
+/* initial set ups */
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+  font-family: 'Norwester';
+  text-transform: uppercase;
+}
+
+button {
+  font-family: 'Norwester';
+  text-transform: uppercase;
+}
+
+
+h1, h2 {
+  font-family: 'Norwester';
+  text-transform: uppercase;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Kollektif Regular';
+  text-transform: uppercase;
+}
+
+
+/* class set ups */
+
+.logo  {
+  width: 80px;
+  height: auto;
+}
+
+.card {
+  border: none;
+}
+
+/* ID set ups */
+
+#mainNav {
+  background-color: transparent;
+}
+
+#mainNav a{
+  color: #f7f7f2;
+}
+
+#mainNav.scrolled {
+  background-color: #7fb069;
+}
+
+#mainNav.scrolled a, i {
+  color: #f7f7f2;
+}
+
+#newFood {
+  background-color: #2a3a18;
+  color: #f0fff0;
+}
+
+#foodOptions {
+  background-color: #411900;
+  color: #f0fff0;
+}
+
+#deals {
+  background-color: #888c8d;
+  color: #fff;
+}
+
+
+
+/* Parallax Styles */
+
+#header {
+  background: url(../img/Junglebground.svg) no-repeat center bottom fixed;
+  position: relative;
+  background-size: cover;
+  min-height: 150vh;
+  padding-top: 6rem;
+}
+
+#header #branding {
+  color: #f0fff0;
+  text-shadow: 0px 4px 6px #000000;
+  margin-top: 15%;
+}
+
+
+#header .grass {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* Animation Classe */
+.swinger:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.bouncy:hover {
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes bounce {
+  10% {
+    transform: translateY(-10px);
+  }
+
+  20% {
+    transform: translateY(-20px);
+  }
+
+  30% {
+    transform: translateY(-35px);
+  }
+
+  40% {
+    transform: translateY(-50px);
+  }
+}
+
+.twisty:hover {
+  animation: rotation 0.7s 2;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  20% {
+      transform: rotate(45deg);
+  }
+  30%{
+    transform: rotate(15deg);
+  }
+  40%{
+    transform: rotate(0deg);
+  }
+}
+
+/* Coloring */
+.shadowed {
+  text-shadow: 0px 4px 6px #000000;
+}
+
+.text-offwhite {
+  color: #f0fff0;
+}
+
+.bg-red{
+  background-color: #f14b42;
+}
+
+.bg-yellow{
+  background-color: #ffe26c;
+}
+
+.bg-green{
+  background-color: #7fb069;
+}
+
+.btn-green{
+  background-color: #7fb069;
+}
+
+.btn-yellow{
+  background-color: #ffe26c;
+}
+
+/* Media Queries */
+
+@media (max-width: 991px) {
+  #header {
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #header {
+    padding-top: 3rem;
+    min-height: 150vw;
+  }
+
+  #header #branding {
+    margin-top: 65%;
+  }
+
+  #header #branding h1 {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  #header #branding {
+    margin-top: 65%;
+  }
+
+  #header #branding h1 {
+    font-size: 45px;
+  }
+
+}

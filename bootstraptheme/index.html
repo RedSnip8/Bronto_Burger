@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>BRONTO BURGER ®</title>
+  <link rel="icon" type="image/svg+xml" href="img/Big Bronto Burger.svg">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://kit.fontawesome.com/f94559caa1.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-sm fixed-top justify-content-center py-0" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/Big Bronto Burger.svg" class="logo" alt="" />
+      </a>
+      <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
+        data-target="#navbarNavAltMarkup" aria-expanded="false" aria-controls="navbar">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse w-100 px-4 justify-content-center" id="navbarNavAltMarkup">
+        <ul class="navbar-nav ml-auto shadowed">
+          <li {% if 'new-items' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">new items</a>
+          </li>
+          <li {% if 'menu' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">menu</a>
+          </li>
+
+          <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">offers</a>
+          </li>
+          <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">about</a>
+          </li>
+          <li {% if 'contact' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Top section -->
+
+
+  <section id="header">
+    <div id="branding" class="p-3 text-center text-white shadowed mb-3">
+      <h1 class="display-4 mb-2">
+        Bronto Burger
+      </h1>
+      <h3 class="lead">A Hunger, 65 Million Years In The Making</h3>
+    </div>
+    <img class="rex" src="img/trex.svg">
+    <img class="grass" src="img/grass.svg" alt="">
+  </section>
+
+  <!-- New Food-->
+  <section id="newFood" class="py-5">
+    <div class="container">
+      <div class="p-3 text-center mb-3">
+        <h1 class="display-4 mb-2">
+          new arrivals
+        </h1>
+        <h3 class="lead">Chef Alejandro has dont it again</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <a href="#" class="d-block card-link">
+            <div class="card listing-preview">
+              <img class="card-img-top" src="./img/chicken_sandwich.jpg" alt="">
+              <div class="card-img-overlay">
+                <h2>
+                  <span class="badge badge-warning text-white float-left"></span>
+                </h2>
+              </div>
+              <div class="card-body text-dark">
+                <div class="text-center">
+                  <h2 class="">Compy Sandwich</h5>
+                    <p>500 Cal</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <a href="#" class="d-block card-link">
+            <div class="card listing-preview">
+              <img class="card-img-top" src="./img/briocheBurg.jpeg" alt="">
+              <div class="card-img-overlay">
+                <h2>
+                  <span class="badge badge-warning text-white float-left"></span>
+                </h2>
+              </div>
+              <div class="card-body text-dark">
+                <div class="text-center">
+                  <h2 class="">Bronto Deluxe</h5>
+                    <p>570 Cal</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <a href="#" class="d-block card-link">
+            <div class="card listing-preview">
+              <img class="card-img-top" src="./img/trexburg.jpeg" alt="">
+              <div class="card-img-overlay">
+                <h2>
+                  <span class="badge badge-warning text-white float-left"></span>
+                </h2>
+              </div>
+              <div class="card-body text-dark">
+                <div class="text-center">
+                  <h2 class="">Trex Tex Burger</h5>
+                    <p>780 Cal</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Food Section -->
+  <section id="foodOptions" class="py-5">
+    <div class="container">
+      <div class="p-3 text-center mb-5">
+        <h1 class="display-4 mb-2">
+          Food For All Diets
+        </h1>
+        <h3 class="lead">The Dinos aren't the only ones well fed</h3>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <a role="button" href="#" class="btn btn-green text-white swinger">
+            <i class="fas fa-drumstick-bite fa-4x"></i>
+          </a>
+          <hr>
+          <h3>Omnivores</h3>
+          <p>No, you are not able to eat any of the dinosaurs in the park. We are certian you'd like our mordern beef
+            and chicken
+            selections anyway!
+          </p>
+        </div>
+        <div class="col-md-4">
+          <a role="button" href="#" class="btn btn-green text-white swinger">
+            <i class="fas fa-seedling fa-4x"></i>
+          </a>
+          <hr>
+          <h3>Herbivores</h3>
+          <p>Not all the Dinos in the park eat meat and niether do you! We have plenty of vegitarian and vegan options.
+            From Black bean burgers to salads, we're sure you'll love the options.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <a role="button" href="#" class="btn btn-green text-white swinger">
+            <i class="fas fa-child fa-4x"></i>
+          </a>
+          <hr>
+          <h3>Little Dinos</h3>
+          <p>They can't eat like a Bronto! Our Dino Jr menu selection is perfect for small kids, and anyone who wants
+            a small meal. Plus they'll enjoy a Jurassic toy!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Deals and Offers-->
+  <section id="deals" class="py-4">
+    <div class="container">
+      <div class="p-3 text-center mb-3 shadowed">
+        <h1 class="display-4 mb-2">
+          Deals And Offers
+        </h1>
+        <h3 class="lead">We spared no expense, but you don't have to</h3>
+      </div>
+      <div class="row">
+        <div class="p-2 col"><img src="./img/BrontMealDeal.png" alt=""></div>
+        <div class="ml-4 d-none d-lg-inline p-2 col align-self-center">
+          <h2>Jurassic Park Tickets</h2>
+          <p>Did you know you're Jurassic Park ticket can be scanned in store for a one-time free drink at any Bronto
+            Burger?
+            Save your ticket after your trip and redeem it at your local Bronto Burger. Digital tickets work as well,
+            just open your Jurassic Park App.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ml-4 d-none d-lg-inline p-2 col align-self-center">
+          <h2>Bag Codes</h2>
+          <p>Every purchase at your local Bronto Burger has a redemable code on the bottom.
+            Redeem it in your Jurassic Park app for a chance to earn discounts in the park, at the Jurassic Park Shop,
+            and at local Bronto Burgers!
+          </p>
+        </div>
+        <div class="p-2 col"><img src="./img/bagSwag-1.png" alt=""></div>
+      </div>
+      <div class="row">
+        <div class="p-2 col"><img src="./img/nuggetDeal.png" alt=""></div>
+        <div class="ml-4 d-none d-lg-inline p-2 col align-self-center">
+          <h2>20 Compy Nuggets For $7</h2>
+          <p>We describe Compsognathus as "chicken-sized" dinosaurs. Our juicy Nuggets
+            are only made from 100% Chickens however. You can get your claws on 20 Compy Nuggets
+            for just $7 now through July!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- Optional JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
