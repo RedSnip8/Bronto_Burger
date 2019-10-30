@@ -16,13 +16,19 @@
 }
 
 /* initial set ups */
+
 img {
   width: 100%;
   height: auto;
 }
 
 body {
-font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+
 }
 
 nav {
@@ -54,26 +60,97 @@ h3, h4, h5, h6 {
   height: auto;
 }
 
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
 .card {
   border: none;
+  overflow: hidden;
+}
+
+.btn {
+  font-family: 'Norwester';
+  text-transform: uppercase;
+  box-shadow: 0px 3px 4px #000000;
+}
+
+.dino-btn {
+  height: 40px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 20vmax;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.social {
+  color: #7fb069;
 }
 
 /* ID set ups */
 
 #mainNav {
-  background-color: transparent;
+  background-color: #7fb069;
 }
 
 #mainNav a{
   color: #f7f7f2;
 }
 
-#mainNav.scrolled {
-  background-color: #7fb069;
+
+#header {
+  background: #000000;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 4px;
+  transform-style: preserve-3d;
+  perspective-origin: center;
+  -webkit-overflow-scrolling: touch;
 }
 
-#mainNav.scrolled a, i {
-  color: #f7f7f2;
+#jungle {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+  transform: translateZ(-4px) scale(2.5) translateY(10vh);
+}
+
+
+#branding {
+  color: #f0fff0;
+  position: absolute;
+  z-index: 3;
+  left: 60vw;
+  top: 120vh;
+  transform: translateZ(-4px) scale(2.5) translate(-23.5%);
+  backface-visibility: hidden;
+}
+
+
+#branding h1{
+  font-size: 90px;
+}
+
+#rex {
+  width: 75vw;
+  z-index: 2;
+  transform: translateZ(2px) scale(0.5)
+              translate(3vw, 25vh);
+
+}
+
+#grass {
+  position: sticky;
+  width: 100vw;
+  z-index: 4;
+  bottom: 0;
+  transform: translateZ(-1) scale(0.625);
 }
 
 #newFood {
@@ -91,32 +168,22 @@ h3, h4, h5, h6 {
   color: #fff;
 }
 
-
-
-/* Parallax Styles */
-
-#header {
-  background: url(../img/Junglebground.svg) no-repeat center bottom fixed;
-  position: relative;
-  background-size: cover;
-  min-height: 150vh;
-  padding-top: 6rem;
-}
-
-#header #branding {
-  color: #f0fff0;
-  text-shadow: 0px 4px 6px #000000;
-  margin-top: 15%;
+#footerLogo {
+  max-height: 6vh;
+  max-width: auto;
 }
 
 
-#header .grass {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+/* Animation Classes */
+
+.zoomer {
+  transition: transform .4s;
 }
 
-/* Animation Classe */
+.zoomer:hover {
+  transform: scale(1.05);
+}
+
 .swinger:hover {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
@@ -186,7 +253,21 @@ h3, h4, h5, h6 {
   }
 }
 
-/* Coloring */
+/* Coloring and Effects */
+
+hr.grey {
+  border-top: 1px solid #888c8d;
+}
+
+.fossil {
+  background: #b8733350;
+  box-shadow: 0px 0px 4px #8f5a28ef;
+}
+
+.dropShadow {
+  box-shadow: 0 2px 6px #000000;
+}
+
 .shadowed {
   text-shadow: 0px 4px 6px #000000;
 }
@@ -207,6 +288,10 @@ h3, h4, h5, h6 {
   background-color: #7fb069;
 }
 
+.bg-black {
+  background-color: #000000;
+}
+
 .btn-green{
   background-color: #7fb069;
 }
@@ -224,28 +309,81 @@ h3, h4, h5, h6 {
 }
 
 @media (max-width: 768px) {
+
   #header {
-    padding-top: 3rem;
-    min-height: 150vw;
+    background: url(../img/Junglebground.svg) no-repeat center bottom fixed;
+    position: relative;
+    background-size: cover;
+    height: 75vh;
+    overflow: hidden;
   }
 
   #header #branding {
-    margin-top: 65%;
+    color: #f0fff0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-30%)
+               translateX(-50%);
+  }
+
+  #jungle {
+  display: none;
+  }
+
+  #header #rex {
+    display: none;
+  }
+
+
+  #header #grass {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translateY(0%);
   }
 
   #header #branding h1 {
-    font-size: 45px;
+    font-size: 100px;
+  }
+
+
+  .card-img-top {
+    width: 100%;
+    height: 45vw;
+    object-fit: cover;
   }
 }
 
 @media (max-width: 576px) {
 
+  #header {
+    background-position-y: bottom;
+    background-position-x: right;
+    padding-top: 3rem;
+    height: 88vh;
+  }
+
+  #header #grass {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+  }
+
   #header #branding {
-    margin-top: 65%;
+    background-color: transparent;
+    text-shadow: 0px 5px 6pxs #000000;
   }
 
   #header #branding h1 {
-    font-size: 45px;
+    font-size: 75px;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 60vw;
+    object-fit: cover;
   }
 
 }
