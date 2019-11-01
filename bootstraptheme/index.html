@@ -28,18 +28,21 @@
       </button>
       <div class="collapse navbar-collapse px-4 justify-content-center" id="navbarNavAltMarkup">
         <ul class="navbar-nav ml-auto shadowed">
-          <li {% if 'new-items' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-            {%  endif %}>
-            <a class="nav-link" href="#">new items</a>
-          </li>
           <li {% if 'menu' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">menu</a>
           </li>
-
+          <li {% if 'special_diets' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">Special Diets</a>
+          </li>
           <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">offers</a>
+          </li>
+          <li {% if 'new-items' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">new items</a>
           </li>
           <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
             {%  endif %}>
@@ -62,6 +65,9 @@
       </div>
       <div id="rex">
         <img src="img/trex.svg">
+      </div>
+      <div id="burger">
+        <img src="img/hamburger-295090.svg">
       </div>
       <div id="grass">
         <img src="img/grass.svg" alt="">
@@ -143,8 +149,10 @@
             Carnivore Options
           </a>
           <hr class="d-none d-lg-block grey">
-          <p>No, you are not able to eat any of the dinosaurs in the park. You'll love our mordern beef
-            and chicken and their fun names!
+          <p>
+            Well, it's more like Omnivore options. Only a few known dinosaurs are classified as Omnivores though. We
+            offer chicken, beef, and
+            fish options for those who wish to eat like a Oviraptor or have a Tyrannosaurus hunger.
           </p>
         </div>
         <div class="col-md-4 mb-5">
@@ -218,36 +226,52 @@
   </section>
 
   <!-- Footer-->
-  <section class="bg-black text-light">
+  <section id="footer"class="bg-black text-light py-4">
     <div class="container">
-      <div class="row align-items-center text-center">
+      <div class="row align-items-start text-center">
         <div class="col-md-6 col-lg-4">
-          <p>place holder</p>
+            <h5>Customer Needs</h5>
+            <ul class="ul-group mb-4">
+              <li class="ul-item"><a href="#"> Contact Us</a></li>
+              <li class="ul-item"><a href="#"> Support</a></li>
+              <li class="ul-item"><a href="#"> Gift Cards</a></li>
+              <li class="ul-item"><a href="#"> Bronto-App</a></li>
+            </ul>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <p>place holder</p>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <h5>Information</h5>
+          <ul class="ul-group mb-3">
+            <li class="ul-item"><a href="#">Careers</a></li>
+            <li class="ul-item"><a href="#">Investments</a></li>
+            <li class="ul-item"><a href="#">Sitemap</a></li>
+            <li class="ul-item"><a href="#">Privacy Policy</a></li>
+            <li class="ul-item"><a href="#">Terms of Use</a></li>
+          </ul>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <a href="#" class="social">
+        <div class="col-md-6 col-lg-4 mb-3 ">
+            <h5>Follow Us</h5>
+          <a href="#" class="social px-2">
             <i class="fab fa-twitter fa-lg"></i>
           </a>
-          <a href="#" class="social">
+          <a href="#" class="social px-2">
             <i class="fab fa-facebook fa-lg"></i>
           </a>
-          <a href="#" class="social">
+          <a href="#" class="social px-2">
             <i class="fab fa-linkedin fa-lg"></i>
           </a>
-          <a href="#" class="social">
+          <a href="#" class="social px-2">
             <i class="fab fa-instagram fa-lg"></i>
           </a>
-          <a href="#" class="social">
+          <a href="#" class="social px-2">
             <i class="fab fa-pintrest fa-lg"></i>
           </a>
         </div>
       </div>
       <div class="row align-items-center text-center">
-        <div class="col-md-12 col-lg-6">
-          <p>place holder</p>
+        <div class="col-md-12 col-lg-6 mb-4">
+          <h5>Get The App</h5>
+          <a href="#" class="btn btn-green text-white"><i class="fab fa-apple"></i> Apple Store</a>
+          <a href="#" class="btn btn-green text-white"><i class="fab fa-google-play"></i> Google Play</a>
         </div>
         <div class="col-md-12 col-lg-6 text-center">
           <img id="footerLogo" src="img/Big Bronto Burger.svg" alt="Bronto Burger Logo">
