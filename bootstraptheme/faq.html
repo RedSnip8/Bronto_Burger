@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>BRONTO BURGER ®</title>
+  <link rel="icon" type="image/svg+xml" href="img/Big Bronto Burger.svg">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://kit.fontawesome.com/f94559caa1.js"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/css/select2.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md fixed-top justify-content-center p-0" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/Big Bronto Burger.svg" class="logo" alt="" />
+      </a>
+      <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
+        data-target="#navbarNavAltMarkup" aria-expanded="false" aria-controls="navbar">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse px-4 justify-content-center" id="navbarNavAltMarkup">
+        <ul class="navbar-nav ml-auto">
+          <li {% if '/' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">home</a>
+          </li>
+          <li {% if 'menu' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">menu</a>
+          </li>
+          <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">offers</a>
+          </li>
+          <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">about</a>
+          </li>
+          <li {% if 'contact' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">Contact us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- FAQ's -->
+  <section class="textheader">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="text-center">
+          <h1>Bronto Burger Support</h1>
+          <hr>
+        </div>
+      </div>
+      <div class>
+          <h4>Frequently Asked Questions</h4>
+          <p>Save some time, your solution might be below!</p>
+          <hr>
+    </div>
+    <div>
+
+    </div>
+  </section>
+
+  <!-- Footer-->
+  <section id="footer" class="bg-black text-light py-4">
+    <div class="container">
+      <div class="row align-items-start text-center">
+        <div class="col-md-6 col-lg-4">
+          <h5>Customer Needs</h5>
+          <ul class="ul-group mb-4">
+            <li class="ul-item"><a href="#"> Contact Us</a></li>
+            <li class="ul-item"><a href="#"> Support</a></li>
+            <li class="ul-item"><a href="#"> Gift Cards</a></li>
+            <li class="ul-item"><a href="#"> Bronto-App</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <h5>Information</h5>
+          <ul class="ul-group mb-3">
+            <li class="ul-item"><a href="#">Careers</a></li>
+            <li class="ul-item"><a href="#">Investments</a></li>
+            <li class="ul-item"><a href="#">Sitemap</a></li>
+            <li class="ul-item"><a href="#">Privacy Policy</a></li>
+            <li class="ul-item"><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-3 ">
+          <h5>Follow Us</h5>
+          <a href="#" class="social px-2">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+          <a href="#" class="social px-2">
+            <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="#" class="social px-2">
+            <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="#" class="social px-2">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+          <a href="#" class="social px-2">
+            <i class="fab fa-pintrest fa-lg"></i>
+          </a>
+        </div>
+      </div>
+      <div class="row align-items-center text-center">
+        <div class="col-md-12 col-lg-6 mb-4">
+          <h5>Get The App</h5>
+          <a href="#" class="btn btn-green text-white"><i class="fab fa-apple"></i> Apple Store</a>
+          <a href="#" class="btn btn-green text-white"><i class="fab fa-google-play"></i> Google Play</a>
+        </div>
+        <div class="col-md-12 col-lg-6 text-center">
+          <img id="footerLogo" src="img/Big Bronto Burger.svg" alt="Bronto Burger Logo">
+          <p>
+            <small>Copyright &copy; 1990-
+              <span class="year"></span> Bronto Burger
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- Optional JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/js/select2.min.js"></script>
+</body>
+
+</html>
