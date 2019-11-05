@@ -16,8 +16,8 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md fixed-top justify-content-center p-0" id="mainNav">
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-md fixed-top justify-content-center p-0" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="img/Big Bronto Burger.svg" class="logo" alt="" />
@@ -28,21 +28,17 @@
       </button>
       <div class="collapse navbar-collapse px-4 justify-content-center" id="navbarNavAltMarkup">
         <ul class="navbar-nav ml-auto shadowed">
+            <li {% if '/' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">home</a>
+          </li>
           <li {% if 'menu' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">menu</a>
           </li>
-          <li {% if 'special_diets' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-            {%  endif %}>
-            <a class="nav-link" href="#">Special Diets</a>
-          </li>
           <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">offers</a>
-          </li>
-          <li {% if 'new-items' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-            {%  endif %}>
-            <a class="nav-link" href="#">new items</a>
           </li>
           <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
             {%  endif %}>
@@ -58,7 +54,7 @@
   </nav>
 
   <!-- Filter Menu -->
-  <section id="dietaryFilter">
+  <section class="textheader">
     <div class="container py-4">
       <div class="row justify-content-center">
         <h3>Filter menu Options</h3>
@@ -129,46 +125,46 @@
       <h3>Burgers</h3>
       <hr>
       <div class="row py-2 mb-5">
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Trike Burger</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Bronto Burger</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Tex Rex Burger</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Raptor Burger</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
@@ -178,46 +174,46 @@
       <h3>Chicken</h3>
       <hr>
       <div class="row py-2 mb-5">
-        <div class="col-6 mb-5">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Compy Sandwich</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Compy Nuggets</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Grilled Compy Nuggets</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Spicy Compy Sandwich</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
@@ -227,68 +223,68 @@
       <h3>Smoothies and Shakes</h3>
       <hr>
       <div class="row py-2 mb-5">
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Choclate Shake</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Vanilla Shake</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Strawberry Shake</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Fruit Smoothie</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Veggie Power Smoothie</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Mango Banana Smoothie</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
@@ -298,57 +294,57 @@
       <h3>Sides</h3>
       <hr>
       <div class="row py-2 mb-5">
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Fries</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Curly Fries</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Sweet Potatoe Fries</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Orange Slices</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Apple Slices</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
@@ -358,68 +354,68 @@
       <h3>Drinks</h3>
       <hr>
       <div class="row py-2 mb-5">
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Soda</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Milk</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Iced Tea</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Kombucha</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Fruit Juice</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Water</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
@@ -430,35 +426,35 @@
       <h3>Kids Options</h3>
       <hr>
       <div class="row py-2 mb-5">
-        <div class="col-6 mb-5">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Tree Star Burger Meal</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Compy Nugget Meal</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
 
-        <div class="col-6">
+        <div class="col-12 col-md-6">
           <div class="media">
             <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
               alt="Generic placeholder image">
             <div class="media-body">
               <h5>Sharptooth Burger Meal</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">View Nutrirtion Facts</a>
+              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
