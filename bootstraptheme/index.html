@@ -17,8 +17,8 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md fixed-top justify-content-center p-0" id="mainNav">
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-md fixed-top justify-content-center p-0" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="img/Big Bronto Burger.svg" class="logo" alt="" />
@@ -28,28 +28,24 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse px-4 justify-content-center" id="navbarNavAltMarkup">
-        <ul class="navbar-nav ml-auto shadowed">
-          <li {% if 'menu' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+        <ul class="navbar-nav ml-auto">
+            <li {% if '/' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">home</a>
+          </li>
+          <li {% if 'menu' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">menu</a>
           </li>
-          <li {% if 'special_diets' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-            {%  endif %}>
-            <a class="nav-link" href="#">Special Diets</a>
-          </li>
-          <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+          <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">offers</a>
           </li>
-          <li {% if 'new-items' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-            {%  endif %}>
-            <a class="nav-link" href="#">new items</a>
-          </li>
-          <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+          <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">about</a>
           </li>
-          <li {% if 'contact' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+          <li {% if 'contact' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">Contact us</a>
           </li>
@@ -91,7 +87,9 @@
         <h1 class="display-4 mb-2">
           new arrivals
         </h1>
-        <h3 class="lead">Chef Alejandro has done it again</h3>
+        <h3 class="lead mb-4">Chef Alejandro has done it again</h3>
+        <a href="#" class="btn btn-green text-white swinger">View Full Menu</a>
+        <hr>
       </div>
       <div class="row justify-content-center">
         <div class="col-md-6 col-lg-4 mb-4">
@@ -141,7 +139,9 @@
         <h1 class="display-4 mb-2">
           Food For All Diets
         </h1>
-        <h3 class="lead">The Dinos aren't the only ones well fed</h3>
+        <h3 class="lead mb-4">The Dinos aren't the only ones well fed</h3>
+        <a href="#" class="btn btn-green text-white swinger">View Full Menu</a>
+        <hr>
       </div>
       <div class="row text-center">
         <div class="col-md-4 mb-5">
@@ -187,7 +187,9 @@
         <h1 class="display-4 mb-2">
           Deals And Offers
         </h1>
-        <h3 class="lead">We spared no expense, but you don't have to</h3>
+        <h3 class="lead mb-4">We spared no expense, but you don't have to</h3>
+        <a href="#" class="btn btn-green text-white swinger">See all Current Deals</a>
+        <hr>
       </div>
       <div class="row mb-3 fossil">
         <div class="p-2 col zoomer"><a href="#"><img class="dropShadow" src="./img/BrontMealDeal.png" alt=""></a></div>
