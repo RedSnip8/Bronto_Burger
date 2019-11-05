@@ -15,9 +15,8 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md fixed-top justify-content-center p-0" id="mainNav">
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-md fixed-top justify-content-center p-0" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="#">
         <img src="img/Big Bronto Burger.svg" class="logo" alt="" />
@@ -28,21 +27,17 @@
       </button>
       <div class="collapse navbar-collapse px-4 justify-content-center" id="navbarNavAltMarkup">
         <ul class="navbar-nav ml-auto shadowed">
+            <li {% if '/' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+            {%  endif %}>
+            <a class="nav-link" href="#">home</a>
+          </li>
           <li {% if 'menu' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">menu</a>
           </li>
-          <li {% if 'special_diets' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-            {%  endif %}>
-            <a class="nav-link" href="#">Special Diets</a>
-          </li>
           <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
             {%  endif %}>
             <a class="nav-link" href="#">offers</a>
-          </li>
-          <li {% if 'new-items' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
-            {%  endif %}>
-            <a class="nav-link" href="#">new items</a>
           </li>
           <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
             {%  endif %}>
@@ -58,7 +53,7 @@
   </nav>
 
   <!-- Showcase -->
-  <section id="nutritionFacts">
+  <section class="textheader">
     <div class="container">
       <div class="row text-center text-md-left">
         <div class="col-sm-7 col-xs-12">
