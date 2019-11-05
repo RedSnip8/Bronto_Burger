@@ -115,6 +115,19 @@ h3, h4, h5, h6 {
   width: auto;
 }
 
+
+.textheader {
+  margin-top: 120px;
+}
+
+.link-click {
+  color: #2a3a18;
+}
+
+.link-click:hover{
+  color: #6b9259;
+}
+
 /* ID set ups */
 
 #mainNav {
@@ -203,12 +216,40 @@ h3, h4, h5, h6 {
   max-width: auto;
 }
 
-#dietaryFilter {
-  margin-top: 120px;
+#dealHeader{
+  position: relative;
+  margin-top: 90px;
+  background-image: linear-gradient( #410c4b, #ff3c00fd);
+  height: 70vh;
+  overflow: hidden;
 }
 
-#nutritionFacts{
-  margin-top: 120px;
+#sunsetTrees{
+  position: absolute;
+  bottom: 0%;
+  width: 100vw;
+  z-index: 1;
+}
+
+#bronto {
+  position: absolute;
+  width: 50vw;
+  left: 20vw;
+  bottom: 0;
+  z-index: 2;
+}
+
+#brandingDeals{
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #f0fff0;
+}
+
+#brandingDeals h1{
+  font-size: 90px;
 }
 
 /* Animation Classes */
@@ -427,6 +468,14 @@ hr.grey {
 
   #header #branding h1 {
     font-size: 75px;
+  }
+
+  #dealHeader {
+    height: 30vh;
+  }
+
+  #brandingDeals h1{
+    font-size: 40px;
   }
 
   .card-img-top {
