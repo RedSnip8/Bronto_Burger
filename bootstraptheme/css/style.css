@@ -107,7 +107,7 @@ h3, h4, h5, h6 {
 }
 
 .ul-group li:hover{
-  color: #888c8d;
+  color: #fdffff;
 }
 
 .preview {
@@ -127,6 +127,25 @@ h3, h4, h5, h6 {
 .link-click:hover{
   color: #6b9259;
 }
+
+.terminalIcon {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.terminalButton {
+  background-color: #84837e;
+  color: #4d4c47;
+
+}
+
+.terminalClose {
+  background-color: #c74e22;
+  color: #47250a;
+}
+
 
 /* ID set ups */
 
@@ -337,6 +356,10 @@ hr.grey {
   border-top: 1px solid #888c8d;
 }
 
+.terminal {
+  border-radius: 5px;
+}
+
 .fossil {
   background: #b8733350;
   box-shadow: 0px 0px 4px #8f5a28ef;
@@ -354,6 +377,22 @@ hr.grey {
   color: #f0fff0;
 }
 
+.text-green {
+  color: #7fb069;
+}
+
+.text-bGreen{
+  color: #c3f891;
+}
+
+.text-iceBlue {
+  color: #96b5f6;
+}
+
+.text-pink {
+  color: plum;
+}
+
 .bg-red{
   background-color: #f14b42;
 }
@@ -368,6 +407,14 @@ hr.grey {
 
 .bg-black {
   background-color: #000000;
+}
+
+.bg-purple {
+  background-color: #300a24;
+}
+
+.bg-dGray {
+  background-color: #3e3d39;
 }
 
 .btn-green{
