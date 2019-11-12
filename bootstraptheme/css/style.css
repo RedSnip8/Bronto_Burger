@@ -201,15 +201,16 @@ h3, h4, h5, h6 {
 
 #burger {
   width: 25vw;
+  top: 163vh;
   z-index: 3;
   bottom: 0;
-  transform: translateZ(2px) scale(0.5) translate(100vw, 47vh);
+  transform: translateZ(2px) scale(0.5) translate(100vw, 66vh);
 }
 
 #grass {
   position: fixed;
   width: 100vw;
-  top: 95vh;
+  top: 110vh;
   z-index: 3;
   bottom: 0;
   transform: translateZ(-1) scale(0.625);
