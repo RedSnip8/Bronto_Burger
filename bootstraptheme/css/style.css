@@ -303,6 +303,24 @@ h3, h4, h5, h6 {
   border: 5px;
 }
 
+#careershead {
+  background: url(../img/burgerbackground.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  margin-top: 90px;
+  min-height: 300px;
+}
+
+#careershead div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 /* Animation Classes */
 
 .zoomer {
