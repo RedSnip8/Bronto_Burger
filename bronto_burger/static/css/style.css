@@ -1,0 +1,651 @@
+/* FONTS */
+
+@font-face {
+  font-family: "Norwester";
+  src: url("webfonts/norwester.eot");
+  src: url("webfonts/norwester.woff") format("woff"),
+  url("webfonts/norwester.ttf") format("truetype"),
+  url("webfonts/norwester.svg#svgNorwester") format("svg");
+  }
+
+@font-face {
+  font-family: 'Kollektif Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('webfonts/Kollektif.woff') format('woff');
+}
+
+/* initial set ups */
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+
+}
+
+nav {
+  font-family: 'Norwester';
+  text-transform: uppercase;
+}
+
+button {
+  font-family: 'Norwester';
+  text-transform: uppercase;
+}
+
+
+h1, h2 {
+  font-family: 'Norwester';
+  text-transform: uppercase;
+}
+
+h3, h4, h5, h6 {
+  font-family: 'Kollektif Regular';
+  text-transform: uppercase;
+}
+
+
+/* class set ups */
+
+.logo  {
+  width: 80px;
+  height: auto;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  border: none;
+  overflow: hidden;
+}
+
+.btn {
+  font-family: 'Norwester';
+  text-transform: uppercase;
+  box-shadow: 0px 3px 4px #000000;
+}
+
+.dino-btn {
+  height: 40px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 20vmax;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.social {
+  color: #7fb069;
+}
+
+.ul-group{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.ul-item {
+  list-style: none;
+}
+
+.ul-group a{
+  color: #7fb069;
+}
+
+.ul-group li:hover{
+  color: #fdffff;
+}
+
+.preview {
+  height: 100px;
+  width: auto;
+}
+
+
+.textheader {
+  margin-top: 120px;
+}
+
+.link-click {
+  color: #2a3a18;
+}
+
+.link-click:hover{
+  color: #6b9259;
+}
+
+.terminalIcon {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.terminalButton {
+  background-color: #84837e;
+  color: #4d4c47;
+
+}
+
+.terminalClose {
+  background-color: #c74e22;
+  color: #47250a;
+}
+
+.appStoreBadge {
+  height: 60px;
+  width: auto;
+}
+
+.overlay {
+  background-color: #000000ad;
+  position: relative;
+}
+
+
+/* ID set ups */
+
+#mainNav {
+  background-color: #7fb069;
+}
+
+#mainNav a{
+  color: #f7f7f2;
+}
+
+
+#header {
+  background: #000000ea;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 4px;
+  transform-style: preserve-3d;
+  perspective-origin: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+#jungle {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+  transform: translateZ(-4px) scale(2.5) translateY(10vh);
+}
+
+
+#branding {
+  color: #f0fff0;
+  position: sticky;
+  z-index: 4;
+  bottom: 0;
+  transform: translateZ(-4px) scale(2.5);
+  backface-visibility: hidden;
+}
+
+
+#branding h1{
+  font-size: 90px;
+}
+
+#rex {
+  width: 75vw;
+  z-index: 2;
+  transform: translateZ(2px) scale(0.5)
+              translate(3vw, 25vh);
+}
+
+#burger {
+  width: 25vw;
+  top: 163vh;
+  z-index: 3;
+  bottom: 0;
+  transform: translateZ(2px) scale(0.5) translate(100vw, 66vh);
+}
+
+#grass {
+  position: fixed;
+  width: 100vw;
+  top: 110vh;
+  z-index: 3;
+  bottom: 0;
+  transform: translateZ(-1) scale(0.625);
+}
+
+#newFood {
+  background-color: #2a3a18;
+  color: #f0fff0;
+}
+
+#foodOptions {
+  background-color: #411900;
+  color: #f0fff0;
+}
+
+#deals {
+  background-color: #888c8d;
+  color: #fff;
+}
+
+#footerLogo {
+  max-height: 6vh;
+  max-width: auto;
+}
+
+#dealHeader{
+  position: relative;
+  margin-top: 90px;
+  background-image: linear-gradient( #410c4b, #ff3c00fd);
+  height: 70vh;
+  overflow: hidden;
+}
+
+#sunsetTrees{
+  position: absolute;
+  bottom: 0%;
+  width: 100vw;
+  z-index: 1;
+}
+
+#bronto {
+  position: absolute;
+  width: 50vw;
+  left: 20vw;
+  bottom: 0;
+  z-index: 2;
+}
+
+#brandingDeals{
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #f0fff0;
+}
+
+#brandingDeals h1{
+  font-size: 90px;
+}
+
+#brontoApphead {
+  background-color: #faeaa8;
+  margin-top: 90px;
+}
+
+#investmentHeader {
+  background: url(../img/BrontoStoreFront.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  margin-top: 90px;
+  min-height: 500px;
+}
+
+#investmentHeader .row {
+  min-height: 400px;
+  border: 5px;
+}
+
+#careershead {
+  background: url(../img/burgerbackground.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: relative;
+  margin-top: 90px;
+  min-height: 300px;
+}
+
+#careershead div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Animation Classes */
+
+.zoomer {
+  transition: transform .4s;
+}
+
+.zoomer:hover {
+  transform: scale(1.05);
+}
+
+.swinger:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.bouncy:hover {
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes bounce {
+  10% {
+    transform: translateY(-10px);
+  }
+
+  20% {
+    transform: translateY(-20px);
+  }
+
+  30% {
+    transform: translateY(-35px);
+  }
+
+  40% {
+    transform: translateY(-50px);
+  }
+}
+
+.twisty:hover {
+  animation: rotation 0.7s 2;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  20% {
+      transform: rotate(45deg);
+  }
+  30%{
+    transform: rotate(15deg);
+  }
+  40%{
+    transform: rotate(0deg);
+  }
+}
+
+/* Coloring and Effects */
+
+hr.grey {
+  border-top: 1px solid #888c8d;
+}
+
+.terminal {
+  border-radius: 5px;
+}
+
+.fossil {
+  background: #b8733350;
+  box-shadow: 0px 0px 4px #8f5a28ef;
+}
+
+.dropShadow {
+  box-shadow: 0 2px 6px #000000;
+}
+
+.shadowed {
+  text-shadow: 0px 4px 6px #000000;
+}
+
+.text-offwhite {
+  color: #f0fff0;
+}
+
+.text-green {
+  color: #7fb069;
+}
+
+.text-bGreen{
+  color: #c3f891;
+}
+
+.text-iceBlue {
+  color: #96b5f6;
+}
+
+.text-pink {
+  color: plum;
+}
+
+.bg-red{
+  background-color: #f14b42;
+}
+
+.bg-yellow{
+  background-color: #ffe26c;
+}
+
+.bg-green{
+  background-color: #7fb069;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.bg-purple {
+  background-color: #300a24;
+}
+
+.bg-dGray {
+  background-color: #3e3d39;
+}
+
+.btn-green{
+  background-color: #7fb069;
+  color: #f0fff0;
+}
+
+.btn-yellow{
+  background-color: #ffe26c;
+}
+
+.badge-blue {
+  background: cadetblue;
+  color: #f0fff0;
+}
+
+/* Media Queries */
+
+@media (max-width: 991px) {
+  #header {
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  #header {
+    background: url(../img/Junglebground.svg) no-repeat center bottom fixed;
+    position: relative;
+    background-size: cover;
+    height: 75vh;
+    overflow: hidden;
+  }
+
+  #header #branding {
+    color: #f0fff0;
+    position: fixed;
+    z-index: 4;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-30%)
+               translateX(-50%);
+  }
+
+  #jungle {
+  display: none;
+  }
+
+  #header #rex {
+    width: 75vw;
+    z-index: 1;
+    top: auto;
+    transform: translateZ(0) scale(1)
+              translate(-25%, 25%);
+  }
+
+  #header #burger {
+    width: 30vw;
+    z-index: 2;
+    bottom: 5;
+    transform: translateZ(0) scale(1) translate(75vw, 30vh);
+  }
+
+
+  #header #grass {
+    width: 100vw;
+    top: auto;
+    z-index: 3;
+    bottom: 0;
+    transform: translateZ(0) scale(1);
+  }
+
+  #header #branding h1 {
+    font-size: 100px;
+  }
+
+
+  .card-img-top {
+    width: 100%;
+    height: 45vw;
+    object-fit: cover;
+  }
+
+  .appStoreBadge {
+    height: 40px;
+    width: auto;
+  }
+}
+
+@media (max-width: 576px) {
+
+  #header {
+    background-position-y: bottom;
+    background-position-x: right;
+    padding-top: 3rem;
+    height: 88vh;
+  }
+
+  #header #branding {
+    background-color: transparent;
+    text-shadow: 0px 5px 6pxs #000000;
+  }
+
+  #header #branding h1 {
+    font-size: 75px;
+  }
+
+  #dealHeader {
+    height: 30vh;
+  }
+
+  #brandingDeals h1{
+    font-size: 40px;
+  }
+
+  .card-img-top {
+    width: 100%;
+    height: 60vw;
+    object-fit: cover;
+  }
+
+}
+
+
+/* Pill Tab Checkboxes like Twitter by alex c*/
+
+
+.PillList-item {
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0 12px 12px 0;
+  text-transform: capitalize;
+}
+
+.PillList-item input[type="checkbox"] {
+  display: none;
+}
+.PillList-item input[type="checkbox"]:checked + .PillList-label {
+  background-color: #7fb069;
+  border: 1px solid #7fb069;
+  color: #fff;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.PillList-label {
+  border: 1px solid #6b9259;
+  border-radius: 15px;
+  color: #6b9259;
+  display: block;
+  padding: 7px 28px;
+  text-decoration: none;
+}
+.PillList-item
+  input[type="checkbox"]:checked
+  + .PillList-label
+  .Icon--checkLight {
+  display: inline-block;
+}
+.PillList-item input[type="checkbox"]:checked + .PillList-label .Icon--addLight,
+.PillList-label .Icon--checkLight,
+.PillList-children {
+  display: none;
+}
+.PillList-label .Icon {
+  width: 12px;
+  height: 12px;
+  margin: 0 0 0 12px;
+}
+.Icon--smallest {
+  font-size: 12px;
+  line-height: 12px;
+}
+.Icon {
+  background: transparent;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: baseline;
+  position: relative;
+}
+
