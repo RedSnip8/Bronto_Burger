@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+| Contact
+{% endblock %}
+
+{% block content %}
+
+  <!-- Contact Section -->
+  <section class="textheader py-3">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <h1>Contact</h1>
+      </div>
+      <hr>
+    </div>
+  </section>
+
+  <!-- General Inquries -->
+  <section class="my-2">
+    <div class="container">
+      <form>
+        <h2> General Inquiries</h2>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="inputFullName" placeholder="Ian Malcom">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address</label>
+          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="inputState" class="form-control">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="comment">Comments</label>
+          <textarea class="form-control" id="comment" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <div class="g-recaptcha" data-sitekey="site-key"></div>
+        </div>
+        <button type="submit" class="btn btn-green">Submit</button>
+      </form>
+      <hr>
+    </div>
+  </section>
+
+
+  <!-- Corporate Numbers and Address -->
+  <section class="my-4">
+    <div class="container">
+      <h2>Corporate Number and Address</h2>
+      <div class="row mt-4">
+        <div class="d-none d-md-block col">
+          <img src="{% static 'img/PaloAlto.png' %}" alt="">
+        </div>
+        <div class="col">
+          <div>
+            <h5>Palo Alto Customer Service Line</h5>
+            <div>
+              <a class="link-click" href="tel:(650)614-6936">
+                <p><i class="fas fa-phone"></i> (650) 614-6936</p>
+              </a>
+              <p class="mb-0"><small>10am-5pm Pacific Time (UTC-8)</small></p>
+              <p class="mt-0"><small>Monday-Friday</small></p>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <h5>Address</h5>
+            <div>
+              <a class="link-click"
+                href="https://www.google.com/maps/place/226+Lytton+Ave,+Palo+Alto,+CA+94301/@37.4457852,-122.1643296,19z/data=!3m1!4b1!4m5!3m4!1s0x808fbb377adeae91:0x5fc6cd0476a74963!8m2!3d37.4457852!4d-122.1637811">
+                <p class="mb-0"><i class="fas fa-map-marker-alt"></i> 1008 Rardin Drive</p>
+                <p class="mb-0"><small>Palo Alto CA 94301</small></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Employment and Investors -->
+
+  <section class="mt-5">
+    <div class="container">
+     <hr>
+      <div class="row justify-content-center">
+        <div class="col">
+          <a role="button" href="#" class="btn btn-green text-white swinger mb-3">
+              <i class="fas fa-users"></i>
+             Join The Team</a>
+        </div>
+        <div class="col">
+          <a role="button" href="#" class="btn btn-green text-white swinger mb-3"><i class="fas fa-hand-holding-usd"></i> Invest in Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+{% endblock %}

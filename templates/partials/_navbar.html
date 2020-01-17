@@ -1,0 +1,37 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-md fixed-top justify-content-center p-0" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'img/Big Bronto Burger.svg' %}" class="logo" alt="" />
+    </a>
+    <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse"
+      data-target="#navbarNavAltMarkup" aria-expanded="false" aria-controls="navbar">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse px-4 justify-content-center" id="navbarNavAltMarkup">
+      <ul class="navbar-nav ml-auto">
+          <li {% if '/index' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+          {%  endif %}>
+          <a class="nav-link" href="{% url 'index' %}">home</a>
+        </li>
+        <li {% if 'menu' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+          {%  endif %}>
+          <a class="nav-link" href="#">menu</a>
+        </li>
+        <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+          {%  endif %}>
+          <a class="nav-link" href="#">offers</a>
+        </li>
+        <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+          {%  endif %}>
+          <a class="nav-link" href="{% url 'about' %}">about</a>
+        </li>
+        <li {% if 'contact' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+          {%  endif %}>
+          <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
