@@ -1,28 +1,28 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, 'templates/pages/index.html')
+    return render(request, 'pages/index.html')
 
 def about(request):
-    return render(request, 'templates/pages/about.html')
+    return render(request, 'pages/about.html')
 
 def bronto_app(request):
-    return render(request, 'templates/pages/bronto_app.html')
+    return render(request, 'pages/bronto_app.html')
 
 def contact(request):
-    return render(request, 'templates/pages/contact.html')
+    return render(request, 'pages/contact.html')
 
 def faq(request):
-    return render(request, 'templates/pages/faq.html')
+    return render(request, 'pages/faq.html')
 
 def investments(request):
-    return render(request, 'templates/pages/investments.html')
+    return render(request, 'pages/investments.html')
 
 def privacy(request):
-    return render(request, 'templates/pages/privacy.html')
+    return render(request, 'pages/privacy.html')
 
 def sitemap(request):
-    return render(request, 'templates/pages/sitemap.html')
+    return render(request, 'pages/sitemap.html')
 
 def terms(request):
-    return render(request, 'templates/pages/terms.html')
+    return render(request, 'pages/terms.html')
