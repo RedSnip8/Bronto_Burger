@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block title %} | Deals {% endblock %}
+
+
+{% block content %}
+
+  <!-- Header-->
+  <section id="dealHeader">
+    <div id="sunsetTrees">
+      <img src="img/nature-4440363.svg" alt="">
+    </div>
+    <div id="bronto">
+      <img src="img/brontosilo.svg" alt="">
+    </div>
+    <div id="brandingDeals" class="text-center">
+      <h1>Deals and Offers</h1>
+      <h4 class="d-none d-md-inline">Bronto Sized Deals</h4>
+
+    </div>
+  </section>
+
+  <!-- Deal Grid-->
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="p-2 col">
+          <a href="#"><img class="dropShadow" src="./img/BrontMealDeal.png" alt=""></a>
+          <a href="#" class="btn btn-green text-white swinger">See Terms</a>
+        </div>
+        <div class="p-2 col">
+          <a href="#"><img class="dropShadow" src="./img/BrontMealDeal.png" alt=""></a>
+          <a href="#" class="btn btn-green text-white swinger">Learn More</a>
+        </div>
+      </div>
+      <div class="row">
+          <div class="p-2 col">
+            <a href="#"><img class="dropShadow" src="./img/BrontMealDeal.png" alt=""></a>
+            <a href="#" class="btn btn-green text-white swinger">See Terms</a>
+          </div>
+          <div class="p-2 col">
+            <a href="#"><img class="dropShadow" src="./img/BrontMealDeal.png" alt=""></a>
+            <a href="#" class="btn btn-green text-white swinger">Learn More</a>
+          </div>
+        </div>
+    </div>
+  </section>
+
+{% endblock %}
