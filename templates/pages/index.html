@@ -38,49 +38,32 @@
     <div class="container">
       <div class="p-3 text-center mb-3">
         <h1 class="display-4 mb-2">
-          new arrivals
+          Bronto Favorites
         </h1>
         <h3 class="lead mb-4">Chef Alejandro has done it again</h3>
-        <a href="#" class="btn btn-green text-white swinger">View Full Menu</a>
+        <a href="{% url 'menu' %}" class="btn btn-green text-white swinger">View Full Menu</a>
         <hr>
       </div>
       <div class="row justify-content-center">
+
+      {% if promoted_food %}
+      {% for food in promoted_food %}
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card">
-            <img class="card-img-top" src="{% static 'img/chicken_sandwich.jpg' %}" alt="">
+            <img class="card-img-top" src="{{food.photo.url}}" alt="">
             <div class="card-body">
               <div class="text-center text-dark">
-                <h2>Compy Sandwich</h2>
-                <p>500 Cal</p>
+                <h2>{{food.name}}</h2>
+                <p>{{food.cals}} Cal</p>
                 <a href="#" class="btn btn-green text-white swinger">Check This Out</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="./img/briocheBurg.jpeg" alt="">
-            <div class="card-body">
-              <div class="text-center text-dark">
-                <h2 class="">Bronto Deluxe</h2>
-                <p>570 Cal</p>
-                <a href="#" class="btn btn-green text-white swinger">Check This Out</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="./img/trexburg.jpeg" alt="">
-            <div class="card-body text-dark">
-              <div class="text-center">
-                <h2 class="">Trex Tex Burger</h2>
-                <p>780 Cal</p>
-                <a href="#" class="btn btn-green text-white swinger">Check This Out</a>
-              </div>
-            </div>
-          </div>
-        </div>
+      {% endfor %}
+      {% else %}
+      <p>None at this time</p>
+      {% endif %}
       </div>
     </div>
   </section>

@@ -1,7 +1,14 @@
 from django.shortcuts import render
+from menu.models import Items
 
 def index(request):
-    return render(request, 'pages/index.html')
+    promoted_food = Items.objects.filter (promoted=True)[:3]
+
+    context = {
+      'promoted_food': promoted_food
+    }
+
+    return render(request, 'pages/index.html', context)
 
 def about(request):
     return render(request, 'pages/about.html')
