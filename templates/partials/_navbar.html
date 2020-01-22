@@ -19,6 +19,10 @@
           {%  endif %}>
           <a class="nav-link" href="{% url 'menu' %}">menu</a>
         </li>
+        <li {% if 'shop' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
+        {%  endif %}>
+        <a class="nav-link" href="{% url 'shop' %}">merch</a>
+      </li>
         <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
           {%  endif %}>
           <a class="nav-link" href="{% url 'deals' %}">offers</a>
