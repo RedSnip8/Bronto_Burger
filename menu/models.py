@@ -2,14 +2,18 @@ from django.db import models
 
 class Items(models.Model):
     food_types = (
-        ('entr', 'Entree'),
+        ('brgr', 'Burger'),
+        ('chkn', 'Chicken'),
+        ('slad', 'Salad'),
+        ('smth', 'Smoothies'),
         ('side', 'Side'),
         ('dsrt', 'Dessert'),
         ('bev', 'Beverage'),
+        ('kdml', 'Kid\'s meal'),
     )
 
     name = models.CharField(max_length=200)
-    category = models.CharField(max_length=200, choices=food_types, default='entr')
+    category = models.CharField(max_length=200, choices=food_types, default='brgr')
     slogan = models.CharField(max_length=200)
     description = models.CharField(max_length=350)
     ingredients = models.CharField(max_length=1000)

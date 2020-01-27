@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} | Menu {% endblock %}
+{% block title %} | {{ item.name }} {% endblock %}
 
 {% block content %}
 
@@ -11,18 +11,19 @@
   <div class="container">
     <div class="row text-center text-md-left">
       <div class="col-sm-7 col-xs-12">
-        <h1 class="display-2">Bronto Burger</h1>
-        <h6 class="lead">They do move in herds</h6>
-        <p>This mouthwater stack of veggie patties can be ordered with double or up to quadruple stacks.
-          Truely a meal a Brontosaurus would love!
+        <h1 class="display-2">{{ item.name }}</h1>
+        <h6 class="lead">{{ item.slogan }}</h6>
+        <p>
+          {{ item.description }}
         </p>
         <p class="d-none d-md-inline">
-          Ingredients:
-
+          <small class="text-muted">
+            Ingredients: {{ item.ingredients }}
+          </small>
         </p>
       </div>
       <div class="col">
-        <img src="http://placekitten.com/500/500" alt="">
+        <img src="{{ item.photo.url }}" alt="">
       </div>
     </div>
     <hr>
@@ -39,43 +40,43 @@
               <tbody>
                 <tr>
                   <th scope="row">Calories</th>
-                  <td>1140 Kcal</td>
+                  <td>{{ item.cals }}</td>
                 </tr>
                 <tr>
                   <th scope="row">Fat</th>
-                  <td>30 g</td>
+                  <td>{{ item.fat }} g</td>
                 </tr>
                 <tr>
                   <th scope="row">Saturated Fat</th>
-                  <td>15 g</td>
+                  <td>{{ item.sat_fat }} g</td>
                 </tr>
                 <tr>
                   <th scope="row">Trans Fat</th>
-                  <td>4 g</td>
+                  <td>{{ item.trans_fat }} g</td>
                 </tr>
                 <tr>
                   <th scope="row">Cholesterol</th>
-                  <td>255 mg</td>
+                  <td>{{ item.cholesterol }} mg</td>
                 </tr>
                 <tr>
                   <th scope="row">Sodium</th>
-                  <td>1120 mg</td>
+                  <td>{{ item.sodium }} mg</td>
                 </tr>
                 <tr>
                   <th scope="row">Carbohydrates</th>
-                  <td>60 g</td>
+                  <td>{{ item.carbs }} g</td>
                 </tr>
                 <tr>
                   <th scope="row">Fiber</th>
-                  <td>10 g</td>
+                  <td>{{ item.fiber }} g</td>
                 </tr>
                 <tr>
                   <th scope="row">Sugar</th>
-                  <td>11 g</td>
+                  <td>{{ item.sugar }} g</td>
                 </tr>
                 <tr>
                   <th scope="row">Protien</th>
-                  <td>26 g</td>
+                  <td>{{ item.protien }} g</td>
                 </tr>
               </tbody>
             </table>
@@ -87,18 +88,13 @@
           <h1>Allergens/Restictions</h1>
         </div>
         <div class="row">
+          {% if diet_type %}
+            {% for x in diet_type %}
           <div class="col">
-            <h3><span class="badge badge-blue">Vegetarian</span></h3>
+              <h3><span class="badge badge-blue">{{ x }}</span></h3>
           </div>
-
-          <div class="col">
-            <h3><span class="badge badge-blue">Lactose-Free</span></h3>
-          </div>
-
-          <div class="col">
-              <h3><span class="badge badge-blue">Nut-Free</span></h3>
-            </div>
-        </div>
+            {% endfor %}
+          {% endif %}
       </div>
     </div>
 
