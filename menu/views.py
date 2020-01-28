@@ -4,7 +4,7 @@ from .models import Items, Diet_Restriction
 
 
 def index(request):
-    product_list = Items.objects
+    product_list = Items.objects.all()
 
     # Filter if restrition set by least common to most common
     if 'restr' in request.GET:
@@ -24,7 +24,7 @@ def index(request):
             product_list.filter(diet_restriction__diet_restriction='glutF')
         # Lactose-Free Filter
         if 'lactF' in restritions:
-            product_list.filter(diet_restriction__diet_restriction='lactF')
+            product_list.filter(diet_restriction__diet_restriction='Lactose-Free')
         # Vegan filter
         if 'vegan' in restritions:
             product_list.filter(diet_restriction__diet_restriction='vegan')

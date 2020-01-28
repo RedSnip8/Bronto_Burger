@@ -76,345 +76,146 @@
       <div class="row justify-content-center p-2 mb-3">
         <h1>Menu Options</h1>
       </div>
+      {% if products %}
       <h3>Burgers</h3>
       <hr>
       <div class="row py-2 mb-5">
+        {% for item in products %}
+        {% if item.category == 'brgr' %}
         <div class="col-12 col-md-6">
           <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
+            <img class="mr-3 img-thumbnail preview" src="{{ item.photo.url }}"
               alt="Generic placeholder image">
             <div class="media-body">
-              <h5>Trike Burger</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
+              <h5>{{  item.name }}</h5>
+              <a href="{% url 'nutrition' item.id %}" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Bronto Burger</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Tex Rex Burger</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Raptor Burger</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
+        {% endif %}
+        {% endfor %}
       </div>
 
       <h3>Chicken</h3>
       <hr>
       <div class="row py-2 mb-5">
+        {% for item in products %}
+        {% if item.category == 'chkn' %}
         <div class="col-12 col-md-6">
           <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
+            <img class="mr-3 img-thumbnail preview" src="{{ item.photo.url }}"
               alt="Generic placeholder image">
             <div class="media-body">
-              <h5>Compy Sandwich</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
+              <h5>{{ item.name }}</h5>
+              <a href="{% url 'nutrition' item.id %}" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
+        {% endif %}
+        {% endfor %}
+      </div>
 
+
+      <h3>Salads</h3>
+      <hr>
+      <div class="row py-2 mb-5">
+        {% for item in products %}
+        {% if item.category == 'slad' %}
         <div class="col-12 col-md-6">
           <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
+            <img class="mr-3 img-thumbnail preview" src="{{ item.photo.url }}"
               alt="Generic placeholder image">
             <div class="media-body">
-              <h5>Compy Nuggets</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
+              <h5>{{ item.name }}</h5>
+              <a href="{% url 'nutrition' item.id %}" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Grilled Compy Nuggets</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Spicy Compy Sandwich</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
+        {% endif %}
+        {% endfor %}
       </div>
 
       <h3>Smoothies and Shakes</h3>
       <hr>
       <div class="row py-2 mb-5">
+        {% for item in products %}
+        {% if item.category == 'smth' %}
         <div class="col-12 col-md-6">
           <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
+            <img class="mr-3 img-thumbnail preview" src="{{ item.photo.url }}"
               alt="Generic placeholder image">
             <div class="media-body">
-              <h5>Choclate Shake</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
+              <h5>{{ item.name }}</h5>
+              <a href="{% url 'nutrition' item.id %}" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Vanilla Shake</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Strawberry Shake</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Fruit Smoothie</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Veggie Power Smoothie</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Mango Banana Smoothie</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
+        {% endif %}
+        {% endfor %}
       </div>
 
       <h3>Sides</h3>
       <hr>
       <div class="row py-2 mb-5">
+        {% for item in products %}
+        {% if item.category == 'side' %}
         <div class="col-12 col-md-6">
           <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
+            <img class="mr-3 img-thumbnail preview" src="{{ item.photo.url }}"
               alt="Generic placeholder image">
             <div class="media-body">
-              <h5>Fries</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
+              <h5>{{ item.name }}</h5>
+              <a href="{% url 'nutrition' item.id %}" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Curly Fries</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Sweet Potatoe Fries</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Orange Slices</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Apple Slices</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
+        {% endif %}
+        {% endfor %}
       </div>
 
       <h3>Drinks</h3>
       <hr>
       <div class="row py-2 mb-5">
+        {% for item in products %}
+        {% if item.category == 'bev' %}
         <div class="col-12 col-md-6">
           <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
+            <img class="mr-3 img-thumbnail preview" src="{{ item.photo.url }}"
               alt="Generic placeholder image">
             <div class="media-body">
-              <h5>Soda</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
+              <h5>{{ item.name }}</h5>
+              <a href="{% url 'nutrition' item.id %}" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Milk</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Iced Tea</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Kombucha</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Fruit Juice</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Water</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
+        {% endif %}
+        {% endfor %}
       </div>
 
 
       <h3>Kids Options</h3>
       <hr>
       <div class="row py-2 mb-5">
+        {% for item in products %}
+        {% if item.category == 'kdml' %}
         <div class="col-12 col-md-6">
           <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
+            <img class="mr-3 img-thumbnail preview" src="{{ item.photo.url }}"
               alt="Generic placeholder image">
             <div class="media-body">
-              <h5>Tree Star Burger Meal</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
+              <h5>{{ item.name }}</h5>
+              <a href="{% url 'nutrition' item.id %}" class="btn btn-green btn-sm text-white swinger">more info</a>
             </div>
           </div>
         </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Compy Nugget Meal</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6">
-          <div class="media">
-            <img class="mr-3 img-thumbnail preview" src="http://placekitten.com/500/500"
-              alt="Generic placeholder image">
-            <div class="media-body">
-              <h5>Sharptooth Burger Meal</h5>
-              <a href="#" class="btn btn-green btn-sm text-white swinger">more info</a>
-            </div>
-          </div>
-        </div>
-
+        {% endif %}
+        {% endfor %}
       </div>
-
+      {% else %}
+      <p>
+        No options with your restrictions.
+      </p>
+      {% endif %}
 
     </div>
   </section>
