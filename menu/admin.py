@@ -9,16 +9,13 @@ class ItemsAdmin(admin.ModelAdmin):
     search_fields = ('name', 'category', 'cals')
     list_per_page = 25
 
-tables = (
-  models.Lactose_Free,
-  models.Nut_Free,
-  models.Soy_Free,
-  models.Egg_Free,
-  models.Gluten_Free,
-  models.Vegan,
-  models.Vegetarian
-)
+class Diet_RestritionAdmin(admin.ModelAdmin):
+    list_display = ('item', 'diet_restriction')
+    list_display_links = ('item',)
+    list_filter = ('item', 'diet_restriction')
+    list_editable = ('diet_restriction',)
+    search_fields = ('item', 'diet_restiction')
+    list_per_page = 25
 
 admin.site.register(models.Items, ItemsAdmin)
-for x in tables:
-  admin.site.register(x)
+admin.site.register(models.Diet_Restriction, Diet_RestritionAdmin)

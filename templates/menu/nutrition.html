@@ -91,7 +91,7 @@
           {% if diet_type %}
             {% for x in diet_type %}
           <div class="col">
-              <h3><span class="badge badge-blue">{{ x }}</span></h3>
+              <h3><span class="badge badge-blue">{{ x.get_diet_restriction_display }}</span></h3>
           </div>
             {% endfor %}
           {% endif %}

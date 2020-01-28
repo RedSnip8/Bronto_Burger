@@ -36,42 +36,19 @@ class Items(models.Model):
     class Meta:
         verbose_name_plural = "Items"
 
-class Vegan(models.Model):
-    item = models.ForeignKey(Items, on_delete=models.DO_NOTHING)
-    def __str__(self):
-        return self.item.name
+class Diet_Restriction(models.Model):
+    diet_types = (
+        ('vegan', 'Vegan'),
+        ('vegtrn', 'Vegetarian'),
+        ('eggF', 'Egg-Free'),
+        ('nutF', 'Nut-Free'),
+        ('soyF', 'Soy-Free'),
+        ('glutF', 'Gluten-Free'),
+        ('lactF', 'Lactose-Free'),
+    )
 
-class Vegetarian(models.Model):
     item = models.ForeignKey(Items, on_delete=models.DO_NOTHING)
-    def __str__(self):
-        return self.item.name
-
-class Gluten_Free(models.Model):
-    item = models.ForeignKey(Items, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return self.item.name
-
-class Lactose_Free(models.Model):
-    item = models.ForeignKey(Items, on_delete=models.DO_NOTHING)
+    diet_restriction = models.CharField(max_length=200, choices=diet_types, default='')
 
     def __str__(self):
         return self.item.name
-
-class Egg_Free(models.Model):
-    item = models.ForeignKey(Items, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return self.item.name
-
-class Soy_Free(models.Model):
-    item = models.ForeignKey(Items, on_delete=models.DO_NOTHING)
-
-    def __str__(self):
-        return self.item.name
-
-class Nut_Free(models.Model):
-   item = models.ForeignKey(Items, on_delete=models.DO_NOTHING)
-
-   def __str__(self):
-      return self.item.name
