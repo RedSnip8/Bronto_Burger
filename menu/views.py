@@ -6,31 +6,18 @@ from .models import Items, Diet_Restriction
 def index(request):
     product_list = Items.objects.all()
 
-    # Filter if restrition set by least common to most common
+    # Check if restr is in the request
     if 'restr' in request.GET:
-        restritions = set(request.GET.getlist('restr'))
-        # Egg-free Filter
-        if 'eggF' in restritions:
-            product_list.filter(diet_restriction__diet_restriction='eggf')
 
-        # Soy-free filter
-        if 'soyF' in restritions:
-            product_list.filter(diet_restriction__diet_restriction='soyF')
-        # Nut-Free Filter
-        if 'nutF' in restritions:
-            product_list.filter(diet_restriction__diet_restriction='nutF')
-        # Gluten-Free Filter
-        if 'glutF' in restritions:
-            product_list.filter(diet_restriction__diet_restriction='glutF')
-        # Lactose-Free Filter
-        if 'lactF' in restritions:
-            product_list.filter(diet_restriction__diet_restriction='Lactose-Free')
-        # Vegan filter
-        if 'vegan' in restritions:
-            product_list.filter(diet_restriction__diet_restriction='vegan')
-        # Vegetarian filter
-        if 'vegtrn' in restritions:
-            product_list.filter(diet_restriction__diet_restriction='vegtrn')
+    # find all the filter option in the request store in a list
+        restriction_list = request.GET.getlist('restr')
+    # Find all the item_id's using the Diet_restrictions table for the
+    # restrictions in gathered from the request
+
+
+    # Filter out the products_list using the filter list
+
+
 
     context = {
         'products' : product_list,
