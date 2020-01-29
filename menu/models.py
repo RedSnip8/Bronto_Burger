@@ -49,6 +49,8 @@ class Diet_Restriction(models.Model):
 
     item = models.ForeignKey(Items, on_delete=models.DO_NOTHING)
     diet_restriction = models.CharField(max_length=200, choices=diet_types, default='')
+    class Meta:
+        unique_together = ['item', 'diet_restriction']
 
     def __str__(self):
         return self.item.name
