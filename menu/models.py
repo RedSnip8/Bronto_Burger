@@ -1,19 +1,30 @@
 from django.db import models
 
+FOOD_TYPES = (
+    ('brgr', 'Burger'),
+    ('chkn', 'Chicken'),
+    ('slad', 'Salad'),
+    ('smth', 'Smoothies'),
+    ('side', 'Side'),
+    ('dsrt', 'Dessert'),
+    ('bev', 'Beverage'),
+    ('kdml', 'Kid\'s meal'),
+)
+
+
+DIET_TYPES = (
+    ('vegan', 'Vegan'),
+    ('vegtrn', 'Vegetarian'),
+    ('eggF', 'Egg-Free'),
+    ('nutF', 'Nut-Free'),
+    ('soyF', 'Soy-Free'),
+    ('glutF', 'Gluten-Free'),
+    ('lactF', 'Lactose-Free'),
+)
 class Items(models.Model):
-    food_types = (
-        ('brgr', 'Burger'),
-        ('chkn', 'Chicken'),
-        ('slad', 'Salad'),
-        ('smth', 'Smoothies'),
-        ('side', 'Side'),
-        ('dsrt', 'Dessert'),
-        ('bev', 'Beverage'),
-        ('kdml', 'Kid\'s meal'),
-    )
 
     name = models.CharField(max_length=200)
-    category = models.CharField(max_length=200, choices=food_types, default='brgr')
+    category = models.CharField(max_length=200, choices=FOOD_TYPES, default='brgr')
     slogan = models.CharField(max_length=200)
     description = models.CharField(max_length=350)
     ingredients = models.CharField(max_length=1000)
@@ -37,18 +48,9 @@ class Items(models.Model):
         verbose_name_plural = "Items"
 
 class Diet_Restriction(models.Model):
-    diet_types = (
-        ('vegan', 'Vegan'),
-        ('vegtrn', 'Vegetarian'),
-        ('eggF', 'Egg-Free'),
-        ('nutF', 'Nut-Free'),
-        ('soyF', 'Soy-Free'),
-        ('glutF', 'Gluten-Free'),
-        ('lactF', 'Lactose-Free'),
-    )
 
     item = models.ForeignKey(Items, on_delete=models.DO_NOTHING)
-    diet_restriction = models.CharField(max_length=200, choices=diet_types, default='')
+    diet_restriction = models.CharField(max_length=200, choices=DIET_TYPES, default='')
     class Meta:
         unique_together = ['item', 'diet_restriction']
 
