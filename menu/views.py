@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, get_list_or_404
-from django.db.models import Count
+from django.db.models import Q, Count
 from .models import Items, Diet_Restriction, DIET_TYPES, FOOD_TYPES
 
 
@@ -126,15 +126,18 @@ def index(request):
         restrictionQuery = Diet_Restriction.objects.filter(
             id__in=subquery).values(
                 'item_id').annotate(
-                    total=Count('diet_restriction')
-        )
+                    total=Count('diet_restriction')).filter(total=restriction_count)
 
         # this list will then be used to filter only the listed IDs from the product_list passed in
         # the context
-    print(restrictionQuery)
+        restricted_ids = [
+            x for x in restrictionQuery.values_list('item_id', flat=True)]
+
+        product_list = product_list.filter(pk__in=restricted_ids)
+
     context = {
         'products': product_list,
-
+        'restrictions':restrictions_list
     }
 
     return render(request, 'menu/menu.html', context)
