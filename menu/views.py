@@ -3,6 +3,97 @@ from django.db.models import Count
 from .models import Items, Diet_Restriction, DIET_TYPES, FOOD_TYPES
 
 
+def sql_builder(restrictions_list, restriction_count):
+    if restriction_count == 4:
+        subquery = Diet_Restriction.objects.filter(
+            diet_restriction__iexact=restrictions_list[0]
+        ) | Diet_Restriction.objects.filter(
+            diet_restriction__iexact=restrictions_list[1]
+        ) | Diet_Restriction.objects.filter(
+            diet_restriction__iexact=restrictions_list[2]
+        ) | Diet_Restriction.objects.filter(
+            diet_restriction__iexact=restrictions_list[3]
+        )
+        return subquery
+
+    elif restriction_count < 4:
+        if restriction_count == 2:
+            subquery = Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[0]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[1]
+            )
+            return subquery
+
+        elif restriction_count > 2:
+            subquery = Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[0]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[1]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[2]
+            )
+            return subquery
+
+        else:
+            subquery = Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[0]
+            )
+            return subquery
+
+    else:
+        if restriction_count == 6:
+            subquery = Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[0]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[1]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[2]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[3]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[4]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[5]
+            )
+            return subquery
+
+        elif restriction_count > 6:
+            subquery = Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[0]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[1]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[2]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[3]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[4]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[5]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[6]
+            )
+            return subquery
+
+        else:
+            subquery = Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[0]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[1]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[2]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[3]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[4]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[5]
+            ) | Diet_Restriction.objects.filter(
+                diet_restriction__iexact=restrictions_list[6]
+            )
+            return subquery
+
 
 def index(request):
     """
@@ -21,114 +112,33 @@ def index(request):
     product_list = Items.objects.all()
 
     # first all restrictions are gathered and stored in a list, but only if the match the keys of diet types
-    restrictions_list = [x for x in request.GET.getlist('restr') if x in list([x for x, y in DIET_TYPES])]
+    restrictions_list = [x for x in request.GET.getlist(
+        'restr') if x in list([x for x, y in DIET_TYPES])]
     restriction_count = len(restrictions_list)
     subquery = []
     # the list will then be passed to an if stament to check if there are any restrictions
     if restrictions_list and restriction_count < 8:
         # this will decide how many ORs need to be in the database query. Once a number is found
         # the values will be passed to a queryset
-        if restriction_count == 4:
-           subquery = Diet_Restriction.objects.filter(
-               diet_restriction__iexact=restrictions_list[0]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[1]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[2]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[3]
-               )
-        elif restriction_count < 4:
-            if restriction_count == 2:
-                subquery = Diet_Restriction.objects.filter(
-               diet_restriction__iexact=restrictions_list[0]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[1]
-                   )
-
-            elif restriction_count > 2:
-                subquery = Diet_Restriction.objects.filter(
-               diet_restriction__iexact=restrictions_list[0]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[1]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[2]
-               )
-
-            else:
-                subquery = Diet_Restriction.objects.filter(
-               diet_restriction__iexact=restrictions_list[0]
-               )
-
-        else:
-            if restriction_count == 6:
-                 subquery = Diet_Restriction.objects.filter(
-               diet_restriction__iexact=restrictions_list[0]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[1]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[2]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[3]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[4]
-                ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[5]
-                )
-
-            elif restriction_count > 6:
-                subquery = Diet_Restriction.objects.filter(
-               diet_restriction__iexact=restrictions_list[0]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[1]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[2]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[3]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[4]
-                ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[5]
-                ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[6]
-                )
-
-            else:
-                 subquery = Diet_Restriction.objects.filter(
-               diet_restriction__iexact=restrictions_list[0]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[1]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[2]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[3]
-               ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[4]
-                ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[5]
-                ) | Diet_Restriction.objects.filter(
-                   diet_restriction__iexact=restrictions_list[6]
-                )
-
-        #after the subquery is built the restrictions list will pull a list of all ids that
+        subquery = sql_builder(restrictions_list, restriction_count)
+        # after the subquery is built the restrictions list will pull a list of all ids that
         # match a total count equal to the number of queries
         restrictionQuery = Diet_Restriction.objects.filter(
             id__in=subquery).values(
                 'item_id').annotate(
                     total=Count('diet_restriction')
-                    )
+        )
 
         # this list will then be used to filter only the listed IDs from the product_list passed in
         # the context
-
-
-
+    print(restrictionQuery)
     context = {
-        'products' : product_list,
+        'products': product_list,
 
-        }
+    }
 
     return render(request, 'menu/menu.html', context)
+
 
 def item(request, item_id):
     # takes the given request and will 404 if there is no valid ID passed in the GET request
@@ -137,10 +147,9 @@ def item(request, item_id):
     # the diet restrictions filters out only the occurences of the request ID for use in the return
     diet_types = Diet_Restriction.objects.filter(item_id=item_id)
 
-
     context = {
-      'item' : item,
-       'diet_type' : diet_types,
+        'item': item,
+        'diet_type': diet_types,
     }
 
     return render(request, 'menu/nutrition.html', context)
