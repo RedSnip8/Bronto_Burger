@@ -81,7 +81,7 @@
       </div>
       <div class="row text-center">
         <div class="col-md-4 mb-5">
-          <a role="button" href="#" class="btn btn-green text-white swinger mb-3">
+          <a role="button" href="{% url 'menu' %}" class="btn btn-green text-white swinger mb-3">
             <img class="dino-btn" src="{% static 'img/rexButton.svg' %}" alt="">
             Carnivore Options
           </a>
@@ -93,7 +93,7 @@
           </p>
         </div>
         <div class="col-md-4 mb-5">
-          <a role="button" href="#" class="btn btn-green text-white swinger mb-3">
+          <a role="button" href="{% url  'menu' %}?restr=vegtrn" class="btn btn-green text-white swinger mb-3">
             <img class="dino-btn" src="{% static 'img/trikeButton.svg' %}" alt="">
             Herbivore Options
           </a>
@@ -103,7 +103,7 @@
           </p>
         </div>
         <div class="col-md-4 mb-5">
-          <a role="button" href="#" class="btn btn-green text-white swinger mb-3">
+          <a role="button" href="{% url 'menu' %}#kids" class="btn btn-green text-white swinger mb-3">
             <img class="dino-btn" src="{% static 'img/raptorButton.svg' %}" alt="">
             Juvenile Options
           </a>
