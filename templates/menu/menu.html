@@ -16,25 +16,25 @@
       <form action="#">
         <div class="row justify-content-center">
           <label class="PillList-item">
-            <input type="checkbox" name="restr" value="vegan">
+            <input type="checkbox" name="restr" value="vegan" {% if 'vegan' in restrictions %} checked {% endif %}>
             <span class="PillList-label">Vegan
               <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
             </span>
           </label>
           <label class="PillList-item">
-            <input type="checkbox" name="restr" value="vegtrn">
+            <input type="checkbox" name="restr" value="vegtrn" {% if 'vegtrn' in restrictions %} checked {% endif %}>
             <span class="PillList-label">Vegetarian
               <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
             </span>
           </label>
           <label class="PillList-item">
-            <input type="checkbox" name="restr" value="glutF">
+            <input type="checkbox" name="restr" value="glutF" {% if 'glutF' in restrictions %} checked {% endif %}>
             <span class="PillList-label">Gluten-Free
               <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
             </span>
           </label>
           <label class="PillList-item">
-            <input type="checkbox" name="restr" value="lactF">
+            <input type="checkbox" name="restr" value="lactF" {% if 'lactF' in restrictions %} checked {% endif %}>
             <span class="PillList-label">Lactose-Free
               <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
             </span>
@@ -42,19 +42,19 @@
         </div>
         <div class="row justify-content-center">
           <label class="PillList-item">
-            <input type="checkbox" name="restr" value="eggF">
+            <input type="checkbox" name="restr" value="eggF" {% if 'eggF' in restrictions %} checked {% endif %}>
             <span class="PillList-label">Egg-Free
               <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
             </span>
           </label>
           <label class="PillList-item">
-            <input type="checkbox" name="restr" value="soyF">
+            <input type="checkbox" name="restr" value="soyF" {% if 'soyF' in restrictions %} checked {% endif %}>
             <span class="PillList-label">Soy-Free
               <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
             </span>
           </label>
           <label class="PillList-item">
-            <input type="checkbox" name="restr" value="nutF">
+            <input type="checkbox" name="restr" value="nutF" {% if 'nutF' in restrictions %} checked {% endif %}>
             <span class="PillList-label">Nut-Free
               <span class="Icon Icon--checkLight Icon--smallest"><i class="fa fa-check"></i></span>
             </span>
