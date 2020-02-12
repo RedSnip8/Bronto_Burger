@@ -55,7 +55,7 @@
               <div class="text-center text-dark">
                 <h2>{{food.name}}</h2>
                 <p>{{food.cals}} Cal</p>
-                <a href="#" class="btn btn-green text-white swinger">Check This Out</a>
+                <a href="{% url 'nutrition' food.id %}" class="btn btn-green text-white swinger">Check This Out</a>
               </div>
             </div>
           </div>
