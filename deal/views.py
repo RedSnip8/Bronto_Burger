@@ -4,4 +4,4 @@ def index(request):
     return render(request, 'deals/deals.html')
 
 def deal(request):
-  return render(request, 'deals/deal.html')
+    return render(request, 'deals/deal.html')
