@@ -21,11 +21,11 @@
         </li>
         <li {% if 'shop' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
         {%  endif %}>
-        <a class="nav-link" href="{% url 'shop' %}">merch</a>
+        <a class="nav-link" href="{% url 'shop' %}">shop</a>
       </li>
         <li {% if 'offers' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
           {%  endif %}>
-          <a class="nav-link" href="{% url 'deals' %}">offers</a>
+          <a class="nav-link" href="{% url 'deals' %}">deals</a>
         </li>
         <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
           {%  endif %}>
@@ -33,7 +33,7 @@
         </li>
         <li {% if 'contact' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item shadowed mr-3"
           {%  endif %}>
-          <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+          <a class="nav-link" href="{% url 'contact' %}">contact us</a>
         </li>
       </ul>
     </div>
